@@ -1,0 +1,25 @@
+.toggle-btn {
+  @include flex(column, space-around, center, nowrap);
+  height: 24px;
+  width: 30px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+
+  .toggle-btn-line {
+    background: white;
+    width: 30px;
+    height: 3px;
+    border-radius: 25px;
+  }
+
+  @media (min-width: 769px) {
+    display: none;
+  }
+}

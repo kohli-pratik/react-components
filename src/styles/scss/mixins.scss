@@ -1,0 +1,15 @@
+@mixin flex($direction, $horizontal-align: center, $vertical-align: center, $wrap: nowrap) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $vertical-align;
+    justify-content: $horizontal-align;
+    flex-wrap: $wrap;
+}
+
+@mixin fontFace($font, $fontfile: $font) {
+    @font-face {
+        font-family: $font;
+        src: url(../fonts/#{$fontfile}.otf) format("opentype"), url(../fonts/#{$fontfile}.woff) format("woff"),
+            url(../fonts/#{$fontfile}.ttf) format("truetype");
+    }
+}
