@@ -1,0 +1,144 @@
+.modal-container {
+    @include flex(column, center, center, nowrap);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+
+    .modal {
+        border-radius: 10px;
+        -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding-box;
+        background-clip: padding-box;
+
+        &-header {
+            @include flex(row, center, center, nowrap);
+            width: 100%;
+            height: 15%;
+            border-bottom: 1px solid black;
+            border-radius: 10px 10px 0 0;
+            font-family: GalanoGrotesque-SemiBold;
+            background-color: white;
+        }
+
+        &-content {
+            height: 70%;
+            background-color: white;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+
+        &-footer {
+            height: 15%;
+            @include flex(row, flex-end, center, nowrap);
+            padding: 0 1rem;
+            border-top: 1px solid black;
+            border-radius: 0 0 10px 10px;
+            background-color: white;
+
+            button {
+                width: 20%;
+                height: 80%;
+                padding: 0;
+                cursor: pointer;
+                border-radius: 10px;
+            }
+
+            &-close-btn {
+                background: none;
+                color: black;
+            }
+
+            &-action-btn {
+                margin-right: 1rem;
+                background-color: #0e71bb;
+                color: white;
+            }
+        }
+
+        &.small {
+            height: 250px;
+            width: 400px;
+
+            .modal-header {
+                &-title {
+                    font-size: 1.8rem;
+                }
+            }
+
+            .modal-footer {
+                button {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        &.medium {
+            height: 325px;
+            width: 500px;
+
+            .modal-header {
+                &-title {
+                    font-size: 2rem;
+                }
+            }
+
+            .modal-footer {
+                button {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+
+        &.large {
+            height: 400px;
+            width: 650px;
+
+            .modal-header {
+                &-title {
+                    font-size: 2.2rem;
+                }
+            }
+
+            .modal-footer {
+                button {
+                    font-size: 1.8rem;
+                }
+            }
+        }
+
+        &.small,
+        &.medium,
+        &.large {
+            @media (max-width: 767px) {
+                min-height: 250px;
+                height: 40%;
+                width: 90%;
+                font-size: 1rem;
+
+                .modal-header {
+                    &-title {
+                        font-size: 1.8rem;
+                    }
+                }
+
+                .modal-footer {
+                    button {
+                        font-size: 1.2rem;
+                    }
+                }
+            }
+
+            @media (max-height: 420px) {
+                min-height: 150px;
+                height: 60%;
+                width: 45%;
+            }
+        }
+    }
+}
