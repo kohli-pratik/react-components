@@ -8,7 +8,7 @@ const Modal = (props) => (
             <header className='modal-header'>
                 <div className='modal-header-title'>{props.headerTitle}</div>
                 <img src={closeBtnIcon} className='modal-header-close-btn'
-                    onClick={props.closeModal}></img>
+                    alt='modal-close-button' onClick={props.closeModal}></img>
             </header>
             <main className='modal-content'>{props.body}</main>
             <footer className='modal-footer'>

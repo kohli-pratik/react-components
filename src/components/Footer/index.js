@@ -4,7 +4,7 @@ import Proptypes from 'prop-types';
 const generateChildren = (footerText) => {
     const children = [];
     Object.keys(footerText)
-        .forEach((key) => children.push(<p>{footerText[key]}</p>));
+        .forEach((key, idx) => children.push(<p key={idx}>{footerText[key]}</p>));
     return children;
 };
 

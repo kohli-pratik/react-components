@@ -1,18 +1,19 @@
-@import "mixins";
-@import "variables";
-@import "../../components/ScreenOverlay/index.scss";
-@import "../../components/Footer/index.scss";
-@import "../../components/Modal/index.scss";
-@import "../../features/SideDrawer/components/DrawerToggleButton/index.scss";
-@import "../../features/SideDrawer/index.scss";
-@import "../../features/NavBar/index.scss";
-@import "../../screens/Dashboard/index.scss";
+@import 'mixins';
+@import 'variables';
+@import '../../components/ScreenOverlay/index.scss';
+@import '../../components/Footer/index.scss';
+@import '../../components/Modal/index.scss';
+@import '../../features/SideDrawer/components/DrawerToggleButton/index.scss';
+@import '../../features/SideDrawer/index.scss';
+@import '../../features/NavBar/index.scss';
+@import '../../features/ToggleFeatures/index.scss';
+@import '../../screens/Dashboard/index.scss';
 
-@include fontFace("GalanoGrotesque", "GalanoGrotesque-Regular");
-@include fontFace("GalanoGrotesque-Light", "GalanoGrotesque-Light");
-@include fontFace("GalanoGrotesque-Medium", "GalanoGrotesque-Medium");
-@include fontFace("GalanoGrotesque-SemiBold", "GalanoGrotesque-SemiBold");
-@include fontFace("GalanoGrotesque-Bold", "GalanoGrotesque-Bold");
+@include fontFace('GalanoGrotesque', 'GalanoGrotesque-Regular');
+@include fontFace('GalanoGrotesque-Light', 'GalanoGrotesque-Light');
+@include fontFace('GalanoGrotesque-Medium', 'GalanoGrotesque-Medium');
+@include fontFace('GalanoGrotesque-SemiBold', 'GalanoGrotesque-SemiBold');
+@include fontFace('GalanoGrotesque-Bold', 'GalanoGrotesque-Bold');
 
 html,
 body {
