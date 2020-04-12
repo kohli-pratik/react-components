@@ -8,7 +8,8 @@ import Modal from '../../components/Modal';
 class Dashboard extends Component {
     state = {
         sideDrawerOpen: false,
-        showModal: true,
+        showModal: false,
+        modalSize: 'small',
     };
 
     handleDrawerToggleClick = () => {
@@ -18,16 +19,24 @@ class Dashboard extends Component {
     }
 
     handleScreenOverlayClick = () => {
-        this.setState({ sideDrawerOpen: false });
+        this.setState((prevState) => ({
+            sideDrawerOpen: !prevState.sideDrawerOpen,
+        }));
     }
 
-    handleCloseBtnClick = () => {
-        console.log('TEST');
+    toggleModalFeature = (size) => {
+        this.setState((prevState) => ({
+            showModal: !prevState.showModal,
+            modalSize: size,
+        }));
+    }
+
+    closeModal = () => {
         this.setState({ showModal: false });
     }
 
     render() {
-        const { sideDrawerOpen, showModal } = this.state;
+        const { sideDrawerOpen, showModal, modalSize } = this.state;
         const screenOverlay = (sideDrawerOpen || showModal)
             ? <ScreenOverlay handleClick={this.handleScreenOverlayClick} />
             : undefined;
@@ -36,15 +45,28 @@ class Dashboard extends Component {
             <div id='dashboard-container'>
                 <NavBar handleDrawerBtnClick={this.handleDrawerToggleClick} />
                 <SideDrawer show={sideDrawerOpen} />
-                {showModal && <Modal size={'large'}
+                {showModal && <Modal size={modalSize}
                     headerTitle={'Modal Title'}
+                    body={'This is the body for the modal.'}
+                    crossIcon={true}
                     closeButton={true}
                     closeButtonTxt={'Cancel'}
-                    handleCloseBtnClick={() => this.handleCloseBtnClick()}
+                    closeModal={() => this.closeModal()}
                     actionButton={true}
                     actionButtonTxt={'Proceed'} />}
                 {screenOverlay}
                 <main id='dashboard-content'>
+                    <section className='feature-toggle'>
+                        <h1>Toggle Features</h1>
+                        <section className='feature-toggle-section'>
+                            <h1>Modal</h1>
+                            <div className='feature-toggle-section-buttons'>
+                                <button onClick={() => this.toggleModalFeature('small')}>Show Modal - Small</button>
+                                <button onClick={() => this.toggleModalFeature('medium')}>Show Modal - Medium</button>
+                                <button onClick={() => this.toggleModalFeature('large')}>Show Modal - Large</button>
+                            </div>
+                        </section>
+                    </section>
                 </main>
                 <Footer />
             </div>

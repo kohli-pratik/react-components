@@ -1,19 +1,22 @@
 import React from 'react';
 import Proptypes from 'prop-types';
+import closeBtnIcon from '../../styles/images/close-btn-icon.svg';
 
 const Modal = (props) => (
     <div className='modal-container'>
         <div className={`modal ${props.size}`}>
             <header className='modal-header'>
-                <p className='modal-header-title'>{props.headerTitle}</p>
+                <div className='modal-header-title'>{props.headerTitle}</div>
+                <img src={closeBtnIcon} className='modal-header-close-btn'
+                    onClick={props.closeModal}></img>
             </header>
-            <main className='modal-content'></main>
+            <main className='modal-content'>{props.body}</main>
             <footer className='modal-footer'>
                 {props.actionButton && <button
                     className='modal-footer-action-btn'
                     onClick={props.handleActionBtnClick}>{props.actionButtonTxt}</button>}
                 {props.closeButton && <button className='modal-footer-close-btn'
-                    onClick={props.handleCloseBtnClick}>{props.closeButtonTxt}</button>}
+                    onClick={props.closeModal}>{props.closeButtonTxt}</button>}
             </footer>
         </div>
     </div>
@@ -22,9 +25,13 @@ const Modal = (props) => (
 Modal.propTypes = {
     size: Proptypes.string,
     headerTitle: Proptypes.string,
+    body: Proptypes.oneOfType([
+        Proptypes.string,
+        Proptypes.array,
+    ]),
     closeButton: Proptypes.bool,
     closeButtonTxt: Proptypes.string,
-    handleCloseBtnClick: Proptypes.func,
+    closeModal: Proptypes.func,
     actionButton: Proptypes.bool,
     actionButtonTxt: Proptypes.string,
     handleActionBtnClick: Proptypes.func,

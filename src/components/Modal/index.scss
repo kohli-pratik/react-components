@@ -23,7 +23,20 @@
             border-bottom: 1px solid black;
             border-radius: 10px 10px 0 0;
             font-family: GalanoGrotesque-SemiBold;
+            position: relative;
             background-color: white;
+
+            &-title {
+                width: 100%;
+                text-align: center;
+            }
+
+            &-close-btn {
+                position: absolute;
+                right: 0;
+                height: 80%;
+                padding: 0 0.5rem;
+            }
         }
 
         &-content {
@@ -31,6 +44,8 @@
             background-color: white;
             overflow-y: scroll;
             overflow-x: hidden;
+            font-size: 1.2rem;
+            padding: 1rem;
         }
 
         &-footer {
@@ -42,11 +57,11 @@
             background-color: white;
 
             button {
-                width: 20%;
+                width: 22%;
                 height: 80%;
                 padding: 0;
                 cursor: pointer;
-                border-radius: 10px;
+                border-radius: 5px;
             }
 
             &-close-btn {
@@ -63,6 +78,7 @@
 
         &.small {
             height: 250px;
+            min-height: 250px;
             width: 400px;
 
             .modal-header {
@@ -80,6 +96,7 @@
 
         &.medium {
             height: 325px;
+            min-height: 325px;
             width: 500px;
 
             .modal-header {
@@ -97,6 +114,7 @@
 
         &.large {
             height: 400px;
+            min-height: 400px;
             width: 650px;
 
             .modal-header {
@@ -135,9 +153,21 @@
             }
 
             @media (max-height: 420px) {
-                min-height: 150px;
+                min-height: 180px;
                 height: 60%;
                 width: 45%;
+
+                .modal-header {
+                    &-title {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .modal-footer {
+                    button {
+                        font-size: 1.2rem;
+                    }
+                }
             }
         }
     }
