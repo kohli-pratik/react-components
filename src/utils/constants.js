@@ -3,7 +3,8 @@ const Constants = {
 
     strings: {
         footerText: {
-            companyRegInfo: 'ABC Inc, Copyright © 2020',
+            subText1: 'By Pratik H Kohli',
+            subText2: 'Copyright © 2020',
         },
     },
 };

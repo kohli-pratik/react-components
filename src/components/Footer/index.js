@@ -1,10 +1,21 @@
 import React from 'react';
-import Constants from '../../utils/constants';
+import Proptypes from 'prop-types';
 
-const Footer = () => (
+const generateChildren = (footerText) => {
+    const children = [];
+    Object.keys(footerText)
+        .forEach((key) => children.push(<p>{footerText[key]}</p>));
+    return children;
+};
+
+const Footer = ({ footerText }) => (
     <footer className='footer'>
-        <p>{Constants.strings.footerText.companyRegInfo}</p>
+        {generateChildren(footerText)}
     </footer>
 );
+
+Footer.propTypes = {
+    footerText: Proptypes.object,
+};
 
 export default Footer;

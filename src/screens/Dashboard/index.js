@@ -4,6 +4,7 @@ import SideDrawer from '../../features/SideDrawer';
 import ScreenOverlay from '../../components/ScreenOverlay';
 import Footer from '../../components/Footer';
 import Modal from '../../components/Modal';
+import Constants from '../../utils/constants';
 
 class Dashboard extends Component {
     state = {
@@ -68,7 +69,7 @@ class Dashboard extends Component {
                         </section>
                     </section>
                 </main>
-                <Footer />
+                <Footer footerText={Constants.strings.footerText} />
             </div>
         );
     }
