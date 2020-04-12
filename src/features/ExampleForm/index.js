@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import Form from '../../components/Form';
 import LabelledInput, {
@@ -8,11 +9,13 @@ import LabelledInput, {
 } from '../../components/LabelledInput';
 import LabelledSelect from '../../components/LabelledSelect';
 import LabelledTextarea from '../../components/LabelledTextarea';
+import LabelledRadioButton from '../../components/LabelledRadioButton';
+import Constants from '../../utils/constants';
 
 const ExampleForm = () => {
     const [formData, setFormData] = useState({});
     const handleOnChange = (event) => {
-        const attribute = event.target.id.split('-')[0];
+        const attribute = event.target.name;
         const { value } = event.target;
         setFormData({
             ...formData,
@@ -47,7 +50,12 @@ const ExampleForm = () => {
                         breakColumn={true} required={true} />
                     <LabelledSelect id='country' label={'Select Country: '}
                         value={formData.country} onChange={(event) => handleOnChange(event)}
-                        options={[null, 'UK', 'USA'].map((country, idx) => generateCountriesOptions(idx, country))}
+                        options={Constants.testData.countries
+                            .map((country, idx) => generateCountriesOptions(idx, country))}
+                        required={true} />
+                    <LabelledRadioButton id='gender' label={'Select Gender: '}
+                        value={formData.gender} onChange={(event) => handleOnChange(event)}
+                        options={Constants.testData.genders}
                         required={true} breakColumn={true} />
                     <LabelledTextarea id='message' label={'Message:'} currentCharCount={formData.message && formData.message.length}
                         maxCharCount={512} value={formData.message}

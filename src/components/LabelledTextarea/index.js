@@ -13,8 +13,8 @@ const LabelledTextarea = ({
 }) => (<>
     {label && <label className='form-label' id={`${id}-textarea-label`} htmlFor={`${id}-textarea`}>{label}</label>}
     {(required)
-        ? <textarea className='form-textarea' id={`${id}-textarea`} value={value} maxLength={maxCharCount} onChange={(event) => onChange(event)} required />
-        : <textarea cclassName='form-textarea' id={`${id}-textarea`} value={value} maxLength={maxCharCount} onChange={(event) => onChange(event)} />}
+        ? <textarea className='form-textarea' id={`${id}-textarea`} name={id} value={value} maxLength={maxCharCount} onChange={(event) => onChange(event)} required />
+        : <textarea cclassName='form-textarea' id={`${id}-textarea`} name={id} value={value} maxLength={maxCharCount} onChange={(event) => onChange(event)} />}
     <div id="char-count">
         <span id="current">{currentCharCount}</span>
         <span id="maximum"> / {maxCharCount}</span>

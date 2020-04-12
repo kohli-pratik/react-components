@@ -11,7 +11,7 @@ const ToggleFeatures = () => {
         setModalSize(size);
     };
 
-    const [showForm, setShowForm] = useState(true);
+    const [showForm, setShowForm] = useState(false);
     const toggleForm = () => setShowForm(!showForm);
 
     return (
