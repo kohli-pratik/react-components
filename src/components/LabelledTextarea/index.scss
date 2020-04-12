@@ -1,0 +1,25 @@
+.form-textarea {
+    width: 82.5%;
+    height: 200px;
+    border-radius: 5px;
+    vertical-align: top;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    resize: none;
+
+    @media (max-width: 894px) {
+        width: 65%;
+        height: 150px;
+        margin: 10px 0;
+    }
+}
+
+#char-count {
+    text-align: right;
+    padding: 0.5rem;
+    font-size: 1rem;
+    @media (max-width: 894px) {
+        padding: 0;
+    }
+}

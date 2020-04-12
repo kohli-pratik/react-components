@@ -15,7 +15,7 @@ const LabelledInput = ({
     onChange,
     value = '',
 }) => (<>
-    {label && <label className='form-label' htmlFor={`${id}-input`}>{label}</label>}
+    {label && <label className='form-label' id={`${id}-input-label`} htmlFor={`${id}-input`}>{label}</label>}
     {(required)
         ? <input type={type} className='form-input' id={`${id}-input`} value={value} onChange={(event) => onChange(event)} required />
         : <input type={type} className='form-input' id={`${id}-input`} value={value} onChange={(event) => onChange(event)} />}

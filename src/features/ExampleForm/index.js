@@ -6,6 +6,8 @@ import LabelledInput, {
     LabelledInputTypeTel,
     LabelledInputTypeSubmit,
 } from '../../components/LabelledInput';
+import LabelledSelect from '../../components/LabelledSelect';
+import LabelledTextarea from '../../components/LabelledTextarea';
 
 const ExampleForm = () => {
     const [formData, setFormData] = useState({});
@@ -21,7 +23,12 @@ const ExampleForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert('Submitting form...');
+        console.log('form data', JSON.stringify(formData));
     };
+
+    const generateCountriesOptions = (key, value) => ((key > 0)
+        ? <option key={key} value={value.toLowerCase()}>{value}</option>
+        : <option key={key} value='' hidden disabled>Select Country</option>);
 
     return (
         <div className='form-container' id='example-form-container'>
@@ -38,6 +45,14 @@ const ExampleForm = () => {
                     <LabelledInput id='telNumber' type={LabelledInputTypeTel} label={'Telephone Number: '}
                         value={formData.telNumber} onChange={(event) => handleOnChange(event)}
                         breakColumn={true} required={true} />
+                    <LabelledSelect id='country' label={'Select Country: '}
+                        value={formData.country} onChange={(event) => handleOnChange(event)}
+                        options={[null, 'UK', 'USA'].map((country, idx) => generateCountriesOptions(idx, country))}
+                        required={true} breakColumn={true} />
+                    <LabelledTextarea id='message' label={'Message:'} currentCharCount={formData.message && formData.message.length}
+                        maxCharCount={512} value={formData.message}
+                        onChange={(event) => handleOnChange(event)}
+                        required={true} breakColumn={true} />
                     <LabelledInput id='submit' type={LabelledInputTypeSubmit} value='Submit' />
                 </Form>
             </main>

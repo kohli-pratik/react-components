@@ -7,3 +7,42 @@
         box-sizing: border-box;
     }
 }
+
+.form-label {
+    display: inline-block;
+    font-size: 1.2rem;
+    width: 135px;
+
+    @media (max-width: 894px) {
+        width: 33%;
+        margin: 0 2% 0 0;
+    }
+
+    &:nth-of-type(even) {
+        margin-left: 2rem;
+
+        @media (max-width: 894px) {
+            margin-left: 0;
+        }
+    }
+}
+
+#submit-input {
+    font-size: 1.2rem;
+    width: 150px;
+    height: 30px;
+    float: right;
+    border: none;
+    background-color: #282c34;
+    color: white;
+    cursor: pointer;
+}
+
+.flex-break {
+    flex-basis: 100%;
+    margin: 1rem 0;
+
+    @media (max-width: 894px) {
+        display: none;
+    }
+}
