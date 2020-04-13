@@ -12,14 +12,14 @@ const LabelledRadioButton = ({
 }) => (<>
     {label && <label className='form-label' id={`${id}-radio-button-label`}>{label}</label>}
     <div className='form-radio-button-group'>
-        {options.map((option, idx) => (<>
+        {options.map((option, idx) => (<div key={idx} className='form-radio-button-container'>
             {(required)
-                ? <input key={idx} type={type} className='form-radio-button' id={`${option.value}-radio-btn`} name={option.name}
+                ? <input type={type} className='form-radio-button' id={`${option.value}-radio-btn`} name={option.name}
                     value={option.value} onChange={(event) => onChange(event)} required />
-                : <input key={idx} type={type} className='form-radio-button' id={`${option.value}-radio-btn`} name={option.name}
+                : <input type={type} className='form-radio-button' id={`${option.value}-radio-btn`} name={option.name}
                     value={option.value} onChange={(event) => onChange(event)} />}
-            <label key={`radio-btn-label-${idx}`} className='form-radio-button-label' id={`${option.value}-radio-btn-label`}
-                htmlFor={`${option.value}-radio-btn`}>{option.label}</label></>
+            <label className='form-radio-button-label' id={`${option.value}-radio-btn-label`}
+                htmlFor={`${option.value}-radio-btn`}>{option.label}</label></div>
         ))}
     </div>
     {breakColumn && <div className='flex-break' />}

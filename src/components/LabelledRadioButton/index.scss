@@ -1,9 +1,16 @@
 .form-radio-button-group {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     width: 250px;
-    height: 30px;
-    vertical-align: middle;
+    min-height: 30px;
+
+    .form-radio-button-container {
+        @include flex(row, flex-start, center);
+        width: 100%;
+        margin-bottom: 0.5rem;
+    }
 
     .form-radio-button {
         &:nth-of-type(even) {
