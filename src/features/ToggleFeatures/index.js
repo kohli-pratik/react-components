@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import Modal from '../../components/Modal';
 import ScreenOverlay from '../../components/ScreenOverlay';
 import ExampleForm from '../ExampleForm';
+// import ExampleAccordion from '../ExampleAccordion';
+import Accordion from '../Accordion';
+import Constants from '../../utils/constants';
 
 const ToggleFeatures = () => {
     const [showModal, setShowModal] = useState(false);
@@ -13,6 +16,9 @@ const ToggleFeatures = () => {
 
     const [showForm, setShowForm] = useState(false);
     const toggleForm = () => setShowForm(!showForm);
+
+    const [showAccordion, setShowAccordion] = useState(true);
+    const toggleAccordion = () => setShowAccordion(!showAccordion);
 
     return (
         <>
@@ -32,6 +38,12 @@ const ToggleFeatures = () => {
                         <button onClick={() => toggleForm()}>Show Example Form</button>
                     </div>
                 </section>
+                <section className='feature-toggle-section'>
+                    <h1>Accordion</h1>
+                    <div className='feature-toggle-section-buttons'>
+                        <button onClick={() => toggleAccordion()}>Show Example Accordion</button>
+                    </div>
+                </section>
             </section>
             {showModal && <Modal size={modalSize}
                 headerTitle={'Modal Title'}
@@ -44,6 +56,9 @@ const ToggleFeatures = () => {
                 actionButtonTxt={'Proceed'} />}
             {showModal && <ScreenOverlay />}
             {showForm && <ExampleForm />}
+            {showAccordion && <Accordion id={'example-accordion'}
+                data={Constants.testData.accordion}
+                allowMultipleExpanded={true} />}
         </>
     );
 };
