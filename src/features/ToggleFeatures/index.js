@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from '../../components/Modal';
 import ScreenOverlay from '../../components/ScreenOverlay';
 import ExampleForm from '../ExampleForm';
-// import ExampleAccordion from '../ExampleAccordion';
 import Accordion from '../Accordion';
 import Constants from '../../utils/constants';
 
@@ -17,7 +16,7 @@ const ToggleFeatures = () => {
     const [showForm, setShowForm] = useState(false);
     const toggleForm = () => setShowForm(!showForm);
 
-    const [showAccordion, setShowAccordion] = useState(true);
+    const [showAccordion, setShowAccordion] = useState(false);
     const toggleAccordion = () => setShowAccordion(!showAccordion);
 
     return (

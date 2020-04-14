@@ -31,9 +31,8 @@ const Constants = {
     },
     strings: {
         footerText: {
-            subText1: 'Reusable Components for React Apps',
-            subText2: 'By Pratik H Kohli',
-            subText3: 'Copyright © 2020',
+            subText1: 'React Components by Pratik H Kohli',
+            subText2: 'Copyright © 2020',
         },
     },
 };

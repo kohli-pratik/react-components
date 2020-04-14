@@ -17,10 +17,6 @@ const NavBar = (props) => (
                 <ul>
                     <li>
                         <a href='/'>Menu Item 1</a>
-                        <ul>
-                            <li>Test</li>
-                            <li>Test</li>
-                        </ul>
                     </li>
                     <li>
                         <a href='/'>Menu Item 2</a>
