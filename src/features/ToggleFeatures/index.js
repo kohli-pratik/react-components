@@ -9,7 +9,7 @@ import cardPlaceholderImg from '../../styles/images/card-placeholder.svg';
 
 const ToggleFeatures = () => {
     const [showModal, setShowModal] = useState(false);
-    const [modalSize, setModalSize] = useState('');
+    const [modalSize, setModalSize] = useState('small');
     const toggleModalFeature = (size) => {
         setShowModal(true);
         setModalSize(size);
@@ -22,9 +22,9 @@ const ToggleFeatures = () => {
     const toggleAccordion = () => setShowAccordion(!showAccordion);
 
     const [showCard, setShowCard] = useState(false);
-    const [cardSize, setCardSize] = useState('');
+    const [cardSize, setCardSize] = useState('small');
     const toggleCard = (size) => {
-        setShowCard(!showCard);
+        setShowCard((cardSize === size) ? !showCard : true);
         setCardSize(size);
     };
 

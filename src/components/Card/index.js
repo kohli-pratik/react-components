@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Card = ({
     id = '',
-    size = 'large',
+    size = '',
     header = false,
     headerText = '',
     footer = false,
