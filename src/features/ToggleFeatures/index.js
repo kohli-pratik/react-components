@@ -4,10 +4,12 @@ import ScreenOverlay from '../../components/ScreenOverlay';
 import ExampleForm from '../ExampleForm';
 import Accordion from '../Accordion';
 import Constants from '../../utils/constants';
+import Card from '../../components/Card';
+import cardPlaceholderImg from '../../styles/images/card-placeholder.svg';
 
 const ToggleFeatures = () => {
     const [showModal, setShowModal] = useState(false);
-    const [modalSize, setModalSize] = useState('small');
+    const [modalSize, setModalSize] = useState('');
     const toggleModalFeature = (size) => {
         setShowModal(true);
         setModalSize(size);
@@ -19,6 +21,13 @@ const ToggleFeatures = () => {
     const [showAccordion, setShowAccordion] = useState(false);
     const toggleAccordion = () => setShowAccordion(!showAccordion);
 
+    const [showCard, setShowCard] = useState(false);
+    const [cardSize, setCardSize] = useState('');
+    const toggleCard = (size) => {
+        setShowCard(!showCard);
+        setCardSize(size);
+    };
+
     return (
         <>
             <section className='feature-toggle'>
@@ -26,9 +35,9 @@ const ToggleFeatures = () => {
                 <section className='feature-toggle-section'>
                     <h1>Modal</h1>
                     <div className='feature-toggle-section-buttons'>
-                        <button onClick={() => toggleModalFeature('small')}>Show Modal - Small</button>
-                        <button onClick={() => toggleModalFeature('medium')}>Show Modal - Medium</button>
-                        <button onClick={() => toggleModalFeature('large')}>Show Modal - Large</button>
+                        <button onClick={() => toggleModalFeature('small')}>Show Example Modal - Small</button>
+                        <button onClick={() => toggleModalFeature('medium')}>Show Example Modal - Medium</button>
+                        <button onClick={() => toggleModalFeature('large')}>Show Example Modal - Large</button>
                     </div>
                 </section>
                 <section className='feature-toggle-section'>
@@ -41,6 +50,14 @@ const ToggleFeatures = () => {
                     <h1>Accordion</h1>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleAccordion()}>Show Example Accordion</button>
+                    </div>
+                </section>
+                <section className='feature-toggle-section'>
+                    <h1>Card</h1>
+                    <div className='feature-toggle-section-buttons'>
+                        <button onClick={() => toggleCard('small')}>Show Example Card - Small</button>
+                        <button onClick={() => toggleCard('medium')}>Show Example Card - Medium</button>
+                        <button onClick={() => toggleCard('large')}>Show Example Card - Large</button>
                     </div>
                 </section>
             </section>
@@ -58,6 +75,16 @@ const ToggleFeatures = () => {
             {showAccordion && <Accordion id={'example-accordion'}
                 data={Constants.testData.accordion}
                 allowMultipleExpanded={true} />}
+            {showCard && <Card id='example-card'
+                size={cardSize}
+                header={true}
+                headerText={'Example Card'}
+                footer={true}
+                footerText={'Last updated 3 mins ago'}
+                image={true}
+                imageSrc={cardPlaceholderImg}
+                title={'Example Title'}
+                contentText={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'} />}
         </>
     );
 };

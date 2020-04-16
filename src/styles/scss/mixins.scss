@@ -9,7 +9,7 @@
 @mixin fontFace($font, $fontfile: $font) {
     @font-face {
         font-family: $font;
-        src: url(../fonts/#{$fontfile}.otf) format("opentype"), url(../fonts/#{$fontfile}.woff) format("woff"),
-            url(../fonts/#{$fontfile}.ttf) format("truetype");
+        src: url(../fonts/#{$fontfile}.otf) format('opentype'), url(../fonts/#{$fontfile}.woff) format('woff'),
+            url(../fonts/#{$fontfile}.ttf) format('truetype');
     }
 }

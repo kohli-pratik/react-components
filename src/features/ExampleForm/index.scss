@@ -1,9 +1,5 @@
 .form-container {
     @include flex(column, flex-start, flex-start, nowrap);
-    border: 1px solid black;
-    margin: 1rem;
-    padding: 1rem;
-    border-radius: 10px;
 }
 
 #message-textarea-label {
