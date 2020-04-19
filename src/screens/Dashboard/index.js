@@ -5,6 +5,7 @@ import ScreenOverlay from '../../components/ScreenOverlay';
 import Footer from '../../components/Footer';
 import Constants from '../../utils/constants';
 import ToggleFeatures from '../../features/ToggleFeatures';
+import BackToTop from '../../features/BackToTop';
 
 class Dashboard extends Component {
     state = {
@@ -37,6 +38,7 @@ class Dashboard extends Component {
                 <main id='dashboard-content'>
                     <ToggleFeatures />
                 </main>
+                <BackToTop />
                 <Footer footerText={Constants.strings.footerText} />
             </div>
         );

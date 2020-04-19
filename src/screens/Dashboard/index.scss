@@ -1,6 +1,6 @@
 #dashboard-container {
   @include flex(column, flex-start, flex-start, nowrap);
-  height: 100%;
+  min-height: 100vh;
 
   #dashboard-content {
     flex: 1;

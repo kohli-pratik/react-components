@@ -76,6 +76,7 @@
     &.large {
         width: 350px;
         min-height: 500px;
+        height: 500px;
 
         header {
             font-size: 1.8rem;
@@ -98,6 +99,7 @@
     &.medium {
         width: 300px;
         min-height: 450px;
+        height: 450px;
 
         header {
             font-size: 1.6rem;
@@ -120,6 +122,7 @@
     &.small {
         width: 250px;
         min-height: 400px;
+        height: 400px;
 
         header {
             font-size: 1.4rem;

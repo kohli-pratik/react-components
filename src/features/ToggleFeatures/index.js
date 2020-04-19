@@ -5,6 +5,7 @@ import ExampleForm from '../ExampleForm';
 import Accordion from '../Accordion';
 import Constants from '../../utils/constants';
 import Card from '../../components/Card';
+
 import cardPlaceholderImg from '../../styles/images/card-placeholder.svg';
 
 const ToggleFeatures = () => {
