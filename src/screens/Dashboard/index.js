@@ -32,7 +32,8 @@ class Dashboard extends Component {
 
         return (
             <div id='dashboard-container'>
-                <NavBar handleDrawerBtnClick={this.handleDrawerToggleClick} />
+                <NavBar handleDrawerBtnClick={this.handleDrawerToggleClick}
+                    menuData={Constants.testData.menuData} />
                 <SideDrawer show={sideDrawerOpen} />
                 {screenOverlay}
                 <main id='dashboard-content'>

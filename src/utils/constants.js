@@ -28,6 +28,62 @@ const Constants = {
             title: 'Test accordion 3',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus nullam eget felis eget nunc. Tortor id aliquet lectus proin nibh nisl. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer.',
         }],
+        menuData: [{
+            title: 'Menu Item 1',
+            hasCategories: false,
+            categoriesData: null,
+            hasOptions: false,
+            options: null,
+            link: '/',
+        },
+        {
+            title: 'Menu Item 2',
+            hasCategories: false,
+            categoriesData: null,
+            hasOptions: true,
+            options: [{
+                name: 'option 1',
+                link: '/',
+            },
+            {
+                name: 'option 2',
+                link: '/',
+            },
+            {
+                name: 'option 3',
+                link: '/',
+            }],
+            link: null,
+        },
+        {
+            title: 'Menu Item 3',
+            hasCategories: true,
+            categoriesData: [{
+                title: 'Sub-category 1',
+                options: [{
+                    name: 'option 1',
+                    link: '/',
+                },
+                {
+                    name: 'option 2',
+                    link: '/',
+                }],
+            },
+            {
+                title: 'Sub-category 2',
+                options: [{
+                    name: 'option 1',
+                    link: '/',
+                },
+                {
+                    name: 'option 2',
+                    link: '/',
+                }],
+            }],
+            hasOptions: false,
+            options: null,
+            link: null,
+        }],
     },
     strings: {
         footerText: {

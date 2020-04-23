@@ -7,12 +7,12 @@
     background-color: black;
     border-bottom: 1px solid #f5f5f5;
 
-    .navbar-navigation {
+    &-navigation {
         @include flex(row, flex-start, center, nowrap);
         height: 100%;
         padding: 0 1.5rem;
 
-        .navbar-logo {
+        .logo {
             @include flex(row, flex-start, center, nowrap);
             height: 100%;
 
@@ -23,26 +23,124 @@
 
         .spacer {
             flex: 1;
+
+            @media (min-width: 768px) {
+                display: none;
+            }
         }
 
-        .navbar-navigation-items {
-            ul {
-                @include flex(row, center, center, nowrap);
-                list-style: none;
-                margin: 0;
+        .items {
+            @include flex(row, center, center, nowrap);
+            list-style: none;
+            margin: auto 0 auto 0;
+            padding: 0;
+            width: 100%;
+
+            .item {
+                margin: 1rem;
                 padding: 0;
-                font-size: 1.4rem;
+                font-size: 1.6rem;
 
-                li {
-                    padding: 1rem;
+                &-link {
+                    color: white;
+                    text-decoration: none;
 
-                    a {
-                        color: white;
-                        text-decoration: none;
+                    &:hover,
+                    &:active {
+                        color: grey;
+                    }
+                }
 
-                        &:hover,
-                        &:active {
-                            color: grey;
+                .dropdown {
+                    position: relative;
+                    &-options {
+                        @include flex(column, center, flex-start, nowrap);
+                        background-color: #fafafa;
+                        position: absolute;
+                        white-space: nowrap;
+                        min-width: 80px;
+                        padding: 2rem;
+
+                        a {
+                            font-size: 1.4rem;
+                            cursor: pointer;
+                            text-decoration: none;
+                            color: black;
+
+                            &:nth-child(even) {
+                                padding: 2rem 0;
+                            }
+
+                            &:nth-last-child() {
+                                padding-bottom: 0;
+                            }
+
+                            &:hover,
+                            &:active {
+                                color: grey;
+                            }
+                        }
+
+                        &.hidden {
+                            display: none;
+                        }
+                    }
+
+                    &-categories {
+                        @include flex(row, center, flex-start, nowrap);
+                        background-color: #fafafa;
+                        color: black;
+                        position: absolute;
+                        white-space: nowrap;
+                        min-width: 200px;
+                        padding: 2rem;
+
+                        .sub-category {
+                            &:nth-child(even) {
+                                padding-left: 2rem;
+                            }
+
+                            &:nth-child(odd) {
+                                padding-right: 2rem;
+                            }
+
+                            &-title {
+                                font-size: 1.4rem;
+                                font-weight: 600;
+                                margin-bottom: 2rem;
+                            }
+
+                            &-options {
+                                @include flex(column, center, flex-start, nowrap);
+
+                                a {
+                                    font-size: 1.4rem;
+                                    cursor: pointer;
+                                    text-decoration: none;
+                                    color: black;
+
+                                    &:nth-child(even) {
+                                        padding: 2rem 0;
+                                    }
+
+                                    &:nth-last-child() {
+                                        padding-bottom: 0;
+                                    }
+
+                                    &:hover,
+                                    &:active {
+                                        color: grey;
+                                    }
+                                }
+                            }
+
+                            &:nth-child(even) {
+                                border-left: 1px solid gainsboro;
+                            }
+                        }
+
+                        &.hidden {
+                            display: none;
                         }
                     }
                 }

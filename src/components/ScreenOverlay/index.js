@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ScreenOverlay = (props) => <div className='screen-overlay' onClick={props.handleClick}></div>;
+const ScreenOverlay = ({ handleClick }) => <div className='screen-overlay' onClick={handleClick}></div>;
 
 ScreenOverlay.propTypes = {
     handleClick: PropTypes.func,
