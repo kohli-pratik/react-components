@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from '../../features/NavBar';
-import SideDrawer from '../../features/SideDrawer';
+import BurgerMenu from '../../features/BurgerMenu';
 import ScreenOverlay from '../../components/ScreenOverlay';
 import Footer from '../../components/Footer';
 import Constants from '../../utils/constants';
@@ -9,32 +9,33 @@ import BackToTop from '../../features/BackToTop';
 
 class Dashboard extends Component {
     state = {
-        sideDrawerOpen: false,
+        mobileMenuOpen: false,
     };
 
     handleDrawerToggleClick = () => {
         this.setState((prevState) => ({
-            sideDrawerOpen: !prevState.sideDrawerOpen,
+            mobileMenuOpen: !prevState.mobileMenuOpen,
         }));
     }
 
     handleScreenOverlayClick = () => {
         this.setState((prevState) => ({
-            sideDrawerOpen: !prevState.sideDrawerOpen,
+            mobileMenuOpen: !prevState.mobileMenuOpen,
         }));
     }
 
     render() {
-        const { sideDrawerOpen, showModal } = this.state;
-        const screenOverlay = (sideDrawerOpen || showModal)
+        const { mobileMenuOpen, showModal } = this.state;
+        const screenOverlay = (mobileMenuOpen || showModal)
             ? <ScreenOverlay handleClick={this.handleScreenOverlayClick} />
             : undefined;
 
         return (
             <div id='dashboard-container'>
-                <NavBar handleDrawerBtnClick={this.handleDrawerToggleClick}
+                <NavBar handleBurgerMenuBtnClick={this.handleDrawerToggleClick}
                     menuData={Constants.testData.menuData} />
-                <SideDrawer show={sideDrawerOpen} />
+                <BurgerMenu open={mobileMenuOpen}
+                    menuData={Constants.testData.menuData} />
                 {screenOverlay}
                 <main id='dashboard-content'>
                     <ToggleFeatures />

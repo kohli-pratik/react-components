@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DrawerToggleButton = (props) => (
-    <button className='toggle-btn' aria-label='open-menu-drawer'
-        onClick={props.handleToggleBtnClick}>
+const ToggleButton = ({ handleToggleBtnClick }) => (
+    <button className='mobile-menu-toggle-btn' aria-label='open-mobil-menu'
+        onClick={handleToggleBtnClick}>
         <div className='toggle-btn-line' />
         <div className='toggle-btn-line' />
         <div className='toggle-btn-line' />
     </button>
 );
 
-DrawerToggleButton.propTypes = {
+ToggleButton.propTypes = {
     handleToggleBtnClick: PropTypes.func,
 };
 
-export default DrawerToggleButton;
+export default ToggleButton;

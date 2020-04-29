@@ -40,7 +40,8 @@ const MenuItem = ({
     hasCategories = false,
     categoriesData = [],
     dropdownRef,
-    dropdownHeight,
+    dropdownOpen = false,
+    dropdownHeight = '0px',
     handleMouseEnter,
     handleMouseLeave,
 }) => (<>
@@ -50,7 +51,7 @@ const MenuItem = ({
     {(hasOptions || hasCategories) && <li className='item .dropdown' id={id}
         onMouseEnter={() => handleMouseEnter(id)}
         onMouseLeave={() => handleMouseLeave(id)}>
-        <a className='item-link' href=''>{title}</a>
+        <p className={dropdownOpen ? 'item-title active' : 'item-title'}>{title}</p>
         {hasOptions && !hasCategories && <div className='dropdown-options hidden'
             style={{ maxHeight: `${dropdownHeight}` }} ref={dropdownRef}>
             {generateOptions(options)}
@@ -71,6 +72,7 @@ MenuItem.propTypes = {
     hasCategories: PropTypes.bool,
     categoriesData: PropTypes.array,
     dropdownRef: PropTypes.any,
+    dropdownOpen: PropTypes.bool,
     dropdownHeight: PropTypes.string,
     handleMouseEnter: PropTypes.func,
     handleMouseLeave: PropTypes.func,

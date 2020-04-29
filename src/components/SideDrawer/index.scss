@@ -1,0 +1,33 @@
+.side-drawer {
+    height: 100%;
+    background-color: white;
+    box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 70%;
+    max-width: 300px;
+    top: 0;
+    z-index: 2;
+    transition: transform 0.3s ease-out;
+
+    &.left {
+        left: 0;
+        transform: translateX(-100%);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    &.right {
+        right: 0;
+        transform: translateX(100%);
+
+        &.open {
+            transform: translateX(0);
+        }
+    }
+
+    @media (min-width: 769px) {
+        display: none;
+    }
+}

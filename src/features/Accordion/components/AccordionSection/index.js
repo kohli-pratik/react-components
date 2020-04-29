@@ -5,6 +5,7 @@ import chevronRight from '../../../../styles/images/chevron-right.svg';
 const AccordionSection = ({
     sectionNumber,
     title,
+    link,
     content,
     toggleAccordion,
     contentRef,
@@ -13,20 +14,25 @@ const AccordionSection = ({
     contentHeight = '0px',
 }) => (<section className='accordion-section' id={`accordion-section-${sectionNumber}`}>
     <header className={`accordion-section-header ${active}`} id={`accordion-section-${sectionNumber}-header`}
-        onClick={(event) => toggleAccordion(event)}>
+        onClick={(content) ? ((event) => toggleAccordion(event))
+            : (() => { window.location.href = link; })}>
         <p className='accordion-section-header-title'>{title}</p>
         <img src={chevronRight} className={`accordion-section-header-icon ${rotateChevron}`}></img>
     </header>
-    <main ref={contentRef} className='accordion-section-content'
+    {content && <main ref={contentRef} className='accordion-section-content'
         style={{ maxHeight: `${contentHeight}` }}>
-        <div className='accordion-section-content-text'>{content}</div>
-    </main>
+        <div className='accordion-section-content-data'>{content}</div>
+    </main>}
 </section >);
 
 AccordionSection.propTypes = {
     sectionNumber: Proptypes.number,
     title: Proptypes.string,
-    content: Proptypes.string,
+    link: Proptypes.string,
+    content: Proptypes.oneOfType(
+        Proptypes.string,
+        Proptypes.array,
+    ),
     toggleAccordion: Proptypes.func,
     contentRef: Proptypes.any,
     active: Proptypes.string,

@@ -9,10 +9,11 @@
 @import '../../components/LabelledTextarea/index.scss';
 @import '../../components/LabelledRadioButton/index.scss';
 @import '../../components/Card/index.scss';
-@import '../../features/SideDrawer/components/DrawerToggleButton/index.scss';
-@import '../../features/SideDrawer/index.scss';
+@import '../../components/SideDrawer/index.scss';
 @import '../../features/NavBar/MenuItem/index.scss';
 @import '../../features/NavBar/index.scss';
+@import '../../features/BurgerMenu/index.scss';
+@import '../../features/BurgerMenu/components/ToggleButton/index.scss';
 @import '../../features/Accordion/index.scss';
 @import '../../features/Accordion/components/AccordionSection/index.scss';
 @import '../../features/ToggleFeatures/index.scss';

@@ -1,12 +1,13 @@
-/* eslint-disable no-unused-vars */
 import React, { useRef, createRef, useState } from 'react';
 import PropTypes from 'prop-types';
-import DrawerToggleBtn from '../SideDrawer/components/DrawerToggleButton';
+import BurgerMenuToggleBtn from '../BurgerMenu/components/ToggleButton';
 import logo from '../../styles/images/logo.png';
 import MenuItem from './MenuItem';
+import ScreenOverlay from '../../components/ScreenOverlay';
 
-const NavBar = ({ menuData, handleDrawerBtnClick }) => {
-    const [dropdownHeight, setDropdownHeight] = useState('0px');
+const NavBar = ({ menuData, handleBurgerMenuBtnClick }) => {
+    const [dropdownData, setDropdownData] = useState({});
+    const [showOverlay, setShowOverlay] = useState(false);
     const dropdownRef = useRef(menuData.map(() => createRef()));
 
     const handleDropdownMouseEnter = (elementId) => {
@@ -14,7 +15,13 @@ const NavBar = ({ menuData, handleDrawerBtnClick }) => {
         const currentClassName = dropdownRef.current[itemSelected].current.className;
         if (currentClassName.includes(' hidden')) {
             dropdownRef.current[itemSelected].current.className = currentClassName.replace(' hidden', '');
-            setDropdownHeight(`${dropdownRef.current[itemSelected].current.scrollHeight}px`);
+            setDropdownData({
+                [itemSelected]: {
+                    isOpen: true,
+                    height: `${dropdownRef.current[itemSelected].current.scrollHeight}px`,
+                },
+            });
+            setShowOverlay(true);
         }
     };
 
@@ -23,7 +30,13 @@ const NavBar = ({ menuData, handleDrawerBtnClick }) => {
         const currentClassName = dropdownRef.current[itemSelected].current.className;
         if (!currentClassName.includes(' hidden')) {
             dropdownRef.current[itemSelected].current.className = currentClassName.concat(' hidden', '');
-            setDropdownHeight('0px');
+            setDropdownData({
+                [itemSelected]: {
+                    isOpen: false,
+                    height: '0px',
+                },
+            });
+            setShowOverlay(false);
         }
     };
 
@@ -39,33 +52,34 @@ const NavBar = ({ menuData, handleDrawerBtnClick }) => {
                 hasCategories={data.hasCategories}
                 categoriesData={data.categoriesData}
                 dropdownRef={dropdownRef.current[idx]}
-                dropdownHeight={dropdownHeight}
-                handleMouseEnter={(event) => handleDropdownMouseEnter(event)}
-                handleMouseLeave={(event) => handleDropdownMouseLeave(event)} />);
+                dropdownOpen={dropdownData[idx] && dropdownData[idx].isOpen}
+                dropdownHeight={dropdownData[idx] && dropdownData[idx].height}
+                handleMouseEnter={(id) => handleDropdownMouseEnter(id)}
+                handleMouseLeave={(id) => handleDropdownMouseLeave(id)} />);
         }));
         return menuItemsHTML;
     };
 
     return (
-        <header className='navbar'>
-            <nav className='navbar-navigation'>
-                <div className='logo'>
-                    <img src={logo} alt='logo' />
-                </div>
-                <div className='spacer' />
-                <div>
-                    <DrawerToggleBtn handleToggleBtnClick={handleDrawerBtnClick} />
-                </div>
-                <ul className='items'>
-                    {createMenuItemsHTML()}
-                </ul>
-            </nav>
-        </header>
+        <>
+            <header className='navbar'>
+                <nav className='navbar-navigation'>
+                    <BurgerMenuToggleBtn handleToggleBtnClick={handleBurgerMenuBtnClick} />
+                    <div className='logo'>
+                        <img src={logo} alt='logo' />
+                    </div>
+                    <ul className='items'>
+                        {createMenuItemsHTML()}
+                    </ul>
+                </nav>
+            </header>
+            {showOverlay && <ScreenOverlay />}
+        </>
     );
 };
 
 NavBar.propTypes = {
-    handleDrawerBtnClick: PropTypes.func,
+    handleBurgerMenuBtnClick: PropTypes.func,
     menuData: PropTypes.array,
 };
 

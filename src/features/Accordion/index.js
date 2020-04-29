@@ -4,7 +4,7 @@ import AccordionSection from './components/AccordionSection';
 
 const Accordion = ({
     id,
-    data = {},
+    data = [],
     allowMultipleExpanded = false,
 }) => {
     const [sectionState, setSectionState] = useState({});
@@ -28,12 +28,16 @@ const Accordion = ({
         }
     };
 
+    const generateContentHTML = (content) => (<p>{content}</p>);
+
     const generateSections = () => {
         const sections = [];
         data.forEach((sectionData, idx) => {
             sections.push(<AccordionSection key={idx} sectionNumber={idx} title={sectionData.title}
-                content={sectionData.content} contentRef={contentRefs.current[idx]}
-                toggleAccordion={(event) => toggleAccordion(event)}
+                link={sectionData.link} content={((typeof sectionData.content === 'string')
+                    ? generateContentHTML(sectionData.content) : sectionData.content)}
+                contentRef={contentRefs.current[idx]}
+                toggleAccordion={sectionData.content && ((event) => toggleAccordion(event))}
                 active={sectionState[idx] && sectionState[idx].active}
                 rotateChevron={sectionState[idx] && sectionState[idx].rotateChevron}
                 contentHeight={sectionState[idx] && sectionState[idx].contentHeight}
