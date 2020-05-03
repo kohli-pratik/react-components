@@ -59,7 +59,7 @@ const Constants = {
             title: 'Menu Item 3',
             hasCategories: true,
             categoriesData: [{
-                title: 'Sub-category 1',
+                title: 'Category 1',
                 options: [{
                     name: 'option 1',
                     link: '/',
@@ -70,7 +70,7 @@ const Constants = {
                 }],
             },
             {
-                title: 'Sub-category 2',
+                title: 'Category 2',
                 options: [{
                     name: 'option 1',
                     link: '/',

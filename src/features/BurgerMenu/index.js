@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import SideDrawer from '../../components/SideDrawer';
 import Accordion from '../Accordion';
+import chevronRight from '../../styles/images/chevron-right.svg';
+import CategoryPanel from './components/CategoryPanel';
 
 const BurgerMenu = ({
     open,
     menuData = [],
 }) => {
+    const [categoryPanelState, setCategoryPanelState] = useState([]);
+    const toggleCategoryPanel = (id) => {
+        const menuItem = id.split('-')[1];
+        const category = id.split('-')[2];
+        const currentState = categoryPanelState[menuItem] && categoryPanelState[menuItem][category];
+        setCategoryPanelState({
+            [menuItem]: {
+                [category]: !currentState,
+            },
+        });
+    };
+
     const generateChildren = () => {
         const childrenHTML = [];
         const accordionData = [];
-        menuData.forEach((data) => {
+        menuData.forEach((data, index) => {
             let dataToAdd = false;
             const { title } = data;
             const { link } = data;
@@ -21,7 +35,7 @@ const BurgerMenu = ({
                 dataToAdd = true;
                 const optionsData = [];
                 data.options.forEach((option, idx) => {
-                    optionsData.push(<a key={idx} className={'burger-menu-sub-option'}
+                    optionsData.push(<a key={idx} className={'burger-menu-data-option'}
                         href={option.link}>{option.name}</a>);
                 });
                 content = optionsData;
@@ -29,10 +43,19 @@ const BurgerMenu = ({
                 dataToAdd = true;
                 const categoriesData = [];
                 data.categoriesData.forEach((categoryData, idx) => {
-                    // Side Panel to add for category options
-                    categoriesData.push(<>
-                        <a key={idx} className={'burger-menu-sub-option'}>{categoryData.title}</a>
-                    </>);
+                    categoriesData.push(<CategoryPanel id={`category-${index}-${idx}`}
+                        title={categoryData.title}
+                        options={categoryData.options}
+                        show={(categoryPanelState && categoryPanelState[index]
+                            && categoryPanelState[index][idx]) || false}
+                        goBack={toggleCategoryPanel} />);
+                    categoriesData.push(<div key={idx} className={'burger-menu-data-category'}
+                        id={`category-${index}-${idx}`}
+                        onClick={(event) => toggleCategoryPanel(event.target.id)}>
+                        <p className={'burger-menu-data-category-title'}>{categoryData.title}</p>
+                        <div className='spacer'></div>
+                        <img className={'burger-menu-data-category-icon'} src={chevronRight}></img>
+                    </div>);
                 });
                 content = categoriesData;
             }
@@ -40,7 +63,7 @@ const BurgerMenu = ({
             if (dataToAdd) accordionData.push({ title, link, content });
         });
         childrenHTML.push(<>
-            <Accordion id={'burger-menu'}
+            <Accordion id={'burger-menu-data'}
                 data={accordionData}
                 allowMultipleExpanded={false} />
         </>);
