@@ -21,3 +21,4 @@ This is a library of resuable responsive components/features for ReactJS apps th
     * For flexibility, the body content can either be text or array of elements.
 * Card - Small/Medium/Large
     * Customizable to include a combination of header, footer, image and body content text.
+* Back to top button
