@@ -1,5 +1,5 @@
 ## Reusable Compoments for ReactJS apps ##
-This is a library of resuable responsive components/features for ReactJS apps that you can use in your projects. It currently comprises of the following
+This is a library of resuable responsive components/features for ReactJS apps that you can use in your projects. Tested on Chrome, Firefox, Safari and MS Edge, it currently comprises of the following
 * Navbar
     * With menu item containing just a link.
     * With menu item containing a animated dropdown with options.
