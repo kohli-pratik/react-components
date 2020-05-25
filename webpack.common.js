@@ -28,20 +28,14 @@ module.exports = {
             },
         ],
     },
-    output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
-    },
     plugins: [
         new HtmlWebPackPlugin({
             template: './public/index.html',
             filename: './index.html',
         }),
     ],
-    devServer: {
-        contentBase: path.join(__dirname, 'dist'),
-        port: process.env.PORT || 3000,
-        host: process.env.HOST || 'localhost',
-        historyApiFallback: true,
+    output: {
+        path: path.resolve(__dirname, 'build'),
+        filename: '[name].bundle.js',
     },
 };
