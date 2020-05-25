@@ -15,10 +15,6 @@ module.exports = {
                 use: ['html-loader'],
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: ['style-loader', 'css-loader', 'sass-loader'],
-            },
-            {
                 test: /\.(jpg|png|gif|svg|ico)$/,
                 use: { loader: 'url-loader' },
             },
@@ -36,6 +32,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
+        publicPath: path.resolve(__dirname, 'public'),
         filename: '[name].bundle.js',
     },
 };
