@@ -10,6 +10,7 @@
   },
   "author": "Pratik H Kohli",
   "license": "ISC",
+  "homepage": ".",
   "babel": {
     "presets": [
       "@babel/preset-env",
@@ -41,6 +42,7 @@
     "@babel/preset-react": "^7.9.4",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
+    "compression-webpack-plugin": "^4.0.0",
     "css-loader": "^3.5.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
