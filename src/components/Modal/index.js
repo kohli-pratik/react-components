@@ -1,26 +1,34 @@
 import React from 'react';
 import Proptypes from 'prop-types';
-import closeBtnIcon from '../../styles/images/close-btn-icon.svg';
+import closeIconBtn from '../../styles/images/close-btn-icon.svg';
 
-const Modal = (props) => (
-    <div className='modal-container'>
-        <div className={`modal ${props.size}`}>
-            <header className='modal-header'>
-                <div className='modal-header-title'>{props.headerTitle}</div>
-                <img src={closeBtnIcon} className='modal-header-close-btn'
-                    alt='modal-close-button' onClick={props.closeModal}></img>
-            </header>
-            <main className='modal-content'>{props.body}</main>
-            <footer className='modal-footer'>
-                {props.actionButton && <button
-                    className='modal-footer-action-btn'
-                    onClick={props.handleActionBtnClick}>{props.actionButtonTxt}</button>}
-                {props.closeButton && <button className='modal-footer-close-btn'
-                    onClick={props.closeModal}>{props.closeButtonTxt}</button>}
-            </footer>
-        </div>
+const Modal = ({
+    size = 'medium',
+    headerTitle = '',
+    body = '',
+    actionButton = false,
+    handleActionBtnClick,
+    actionButtonTxt,
+    closeButton = true,
+    closeModal = () => null,
+    closeButtonTxt = 'Close',
+}) => (<div className='modal-container'>
+    <div className={`modal ${size}`}>
+        <header className='modal-header'>
+            <div className='modal-header-title'>{headerTitle}</div>
+            <img src={closeIconBtn} className='modal-header-close-btn'
+                alt='modal-close-button' onClick={closeModal}></img>
+        </header>
+        <main className='modal-content'>{body}</main>
+        <footer className='modal-footer'>
+            {actionButton && <button
+                className='modal-footer-action-btn'
+                onClick={handleActionBtnClick}>{actionButtonTxt}</button>}
+            {closeButton && <button className='modal-footer-close-btn'
+                onClick={closeModal}>{closeButtonTxt}</button>}
+        </footer>
     </div>
-);
+</div>);
 
 Modal.propTypes = {
     size: Proptypes.string,

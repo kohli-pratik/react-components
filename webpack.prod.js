@@ -22,16 +22,16 @@ module.exports = merge(common, {
             filename: '[name].css',
             chunkFilename: '[id].css',
         }),
-        new CompressionPlugin({
-            filename: '[path].br[query]',
-            algorithm: 'brotliCompress',
-            test: /\.(js|css|html|svg|png)$/,
-            compressionOptions: {
-                level: 11,
-            },
-            threshold: 10240,
-            minRatio: 0.8,
-            deleteOriginalAssets: false,
-        }),
+        // new CompressionPlugin({
+        //     filename: '[path].br[query]',
+        //     algorithm: 'brotliCompress',
+        //     test: /\.(js|css|html|svg|png)$/,
+        //     compressionOptions: {
+        //         level: 11,
+        //     },
+        //     threshold: 10240,
+        //     minRatio: 0.8,
+        //     deleteOriginalAssets: false,
+        // }),
     ],
 });

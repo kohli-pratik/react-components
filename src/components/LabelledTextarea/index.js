@@ -22,7 +22,6 @@ const LabelledTextarea = ({
     {breakColumn && <div className='flex-break' />}
 </>);
 
-
 LabelledTextarea.propTypes = {
     id: PropTypes.string,
     label: PropTypes.string,
