@@ -22,3 +22,5 @@ This is a library of resuable responsive components/features for ReactJS apps th
 * Card - Small/Medium/Large
     * Customizable to include a combination of header, footer, image and body content text.
 * Back to top button
+* Table
+    * Body Y-Scrollable.
