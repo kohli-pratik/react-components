@@ -25,7 +25,6 @@ const ExampleForm = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         alert('Submitting form...');
-        console.log('form data', JSON.stringify(formData));
     };
 
     const generateCountriesOptions = (key, value) => ((key > 0)
