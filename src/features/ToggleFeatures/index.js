@@ -35,10 +35,10 @@ const ToggleFeatures = () => {
 
     return (
         <>
-            <section className='feature-toggle'>
-                <h1>Toggle Features</h1>
+            <main className='feature-toggle'>
+                <h1 className='feature-toggle-heading'>Toggle Features</h1>
                 <section className='feature-toggle-section'>
-                    <h1>Modal</h1>
+                    <h2 className='feature-toggle-section-heading'>Modal</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleModalFeature('small')}>Show Example Modal - Small</button>
                         <button onClick={() => toggleModalFeature('medium')}>Show Example Modal - Medium</button>
@@ -46,19 +46,19 @@ const ToggleFeatures = () => {
                     </div>
                 </section>
                 <section className='feature-toggle-section'>
-                    <h1>Form</h1>
+                    <h2 className='feature-toggle-section-heading'>Form</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleForm()}>Show Example Form</button>
                     </div>
                 </section>
                 <section className='feature-toggle-section'>
-                    <h1>Accordion</h1>
+                    <h2 className='feature-toggle-section-heading'>Accordion</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleAccordion()}>Show Example Accordion</button>
                     </div>
                 </section>
                 <section className='feature-toggle-section'>
-                    <h1>Card</h1>
+                    <h2 className='feature-toggle-section-heading'>Card</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleCard('small')}>Show Example Card - Small</button>
                         <button onClick={() => toggleCard('medium')}>Show Example Card - Medium</button>
@@ -66,12 +66,12 @@ const ToggleFeatures = () => {
                     </div>
                 </section>
                 <section className='feature-toggle-section'>
-                    <h1>Table</h1>
+                    <h2 className='feature-toggle-section-heading'>Table</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleTable()}>Show Example Table</button>
                     </div>
                 </section>
-            </section>
+            </main>
             {showModal && <Modal size={modalSize}
                 headerTitle={'Modal Title'}
                 body={'This is the body for the modal.'}

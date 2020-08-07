@@ -1,33 +1,34 @@
-@import 'mixins';
-@import 'variables';
-@import '../../components/ScreenOverlay/index.scss';
-@import '../../components/Footer/index.scss';
-@import '../../components/Modal/index.scss';
-@import '../../components/Form/index.scss';
-@import '../../components/LabelledInput/index.scss';
-@import '../../components/LabelledSelect/index.scss';
-@import '../../components/LabelledTextarea/index.scss';
-@import '../../components/LabelledRadioButton/index.scss';
-@import '../../components/Card/index.scss';
-@import '../../components/SideDrawer/index.scss';
-@import '../../features/NavBar/MenuItem/index.scss';
-@import '../../features/NavBar/index.scss';
-@import '../../features/BurgerMenu/index.scss';
-@import '../../features/BurgerMenu/components/CategoryPanel/index.scss';
-@import '../../features/BurgerMenu/components/ToggleButton/index.scss';
-@import '../../features/Accordion/index.scss';
-@import '../../features/Accordion/components/AccordionSection/index.scss';
-@import '../../features/ToggleFeatures/index.scss';
-@import '../../features/BackToTop/index.scss';
-@import '../../features/ExampleForm/index.scss';
-@import '../../screens/Dashboard/index.scss';
-@import '../../components/Table/index.scss';
+@import "cssReset.scss";
+@import "mixins";
+@import "variables";
+@import "../../components/ScreenOverlay/index.scss";
+@import "../../components/Footer/index.scss";
+@import "../../components/Modal/index.scss";
+@import "../../components/Form/index.scss";
+@import "../../components/LabelledInput/index.scss";
+@import "../../components/LabelledSelect/index.scss";
+@import "../../components/LabelledTextarea/index.scss";
+@import "../../components/LabelledRadioButton/index.scss";
+@import "../../components/Card/index.scss";
+@import "../../components/SideDrawer/index.scss";
+@import "../../features/NavBar/MenuItem/index.scss";
+@import "../../features/NavBar/index.scss";
+@import "../../features/BurgerMenu/index.scss";
+@import "../../features/BurgerMenu/components/CategoryPanel/index.scss";
+@import "../../features/BurgerMenu/components/ToggleButton/index.scss";
+@import "../../features/Accordion/index.scss";
+@import "../../features/Accordion/components/AccordionSection/index.scss";
+@import "../../features/ToggleFeatures/index.scss";
+@import "../../features/BackToTop/index.scss";
+@import "../../features/ExampleForm/index.scss";
+@import "../../screens/Dashboard/index.scss";
+@import "../../components/Table/index.scss";
 
-@include fontFace('GalanoGrotesque', 'GalanoGrotesque-Regular');
-@include fontFace('GalanoGrotesque-Light', 'GalanoGrotesque-Light');
-@include fontFace('GalanoGrotesque-Medium', 'GalanoGrotesque-Medium');
-@include fontFace('GalanoGrotesque-SemiBold', 'GalanoGrotesque-SemiBold');
-@include fontFace('GalanoGrotesque-Bold', 'GalanoGrotesque-Bold');
+@include fontFace("GalanoGrotesque", "GalanoGrotesque-Regular");
+@include fontFace("GalanoGrotesque-Light", "GalanoGrotesque-Light");
+@include fontFace("GalanoGrotesque-Medium", "GalanoGrotesque-Medium");
+@include fontFace("GalanoGrotesque-SemiBold", "GalanoGrotesque-SemiBold");
+@include fontFace("GalanoGrotesque-Bold", "GalanoGrotesque-Bold");
 
 html,
 body {
@@ -43,4 +44,18 @@ body {
 
 #root {
   height: 100%;
+}
+
+// Custom scrollbar width for all Chrome, Safari and Edge. Firefox presently does not support this functionality.
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+  height: 7px;
+}
+
+// Custom scrollbar colour for all Chrome, Safari and Edge. Firefox presently does not support this functionality.
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: black;
+  box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
 }

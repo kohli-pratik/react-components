@@ -15,7 +15,7 @@ const Modal = ({
 }) => (<div className='modal-container'>
     <div className={`modal ${size}`}>
         <header className='modal-header'>
-            <div className='modal-header-title'>{headerTitle}</div>
+            <p className='modal-header-title'>{headerTitle}</p>
             <img src={closeIconBtn} className='modal-header-close-btn'
                 alt='modal-close-button' onClick={closeModal}></img>
         </header>
