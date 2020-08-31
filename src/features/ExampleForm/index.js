@@ -33,7 +33,7 @@ const ExampleForm = () => {
 
     return (
         <div className='form-container' id='example-form-container'>
-            <header className='form-header'><h1>Example Form</h1></header>
+            <header className='form-header'><p className='form-header-title'>Example Form</p></header>
             <main className='form-content'>
                 <Form id='example-form' onSubmit={(event) => handleSubmit(event)}>
                     <LabelledInput id='firstName' type={LabelledInputTypeText} label={'First Name: '} value={formData.firstName}

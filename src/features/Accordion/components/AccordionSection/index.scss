@@ -1,11 +1,11 @@
 .accordion-section {
     width: 100%;
     min-height: 40px;
-    background-color: pink;
     @include flex(column, flex-start, flex-start, nowrap);
 
     &-header {
         width: 100%;
+        min-height: inherit;
         height: 15%;
         @include flex(row, flex-start, center, nowrap);
         background-color: #eee;
@@ -49,6 +49,7 @@
         width: 100%;
         background-color: white;
         font-size: 1.2rem;
+        line-height: normal;
         overflow: hidden;
         transition: max-height 0.6s ease;
         box-sizing: border-box;
