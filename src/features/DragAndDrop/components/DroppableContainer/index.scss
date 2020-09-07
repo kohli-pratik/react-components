@@ -1,0 +1,12 @@
+.droppable-container {
+    @include flex(column, flex-start, flex-start, nowrap);
+    background-color: #313131;
+    width: 100%;
+    max-width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}

@@ -8,6 +8,7 @@ import Card from '../../components/Card';
 
 import cardPlaceholderImg from '../../styles/images/card-placeholder.svg';
 import Table from '../../components/Table';
+import DragAndDrop from '../DragAndDrop';
 
 const ToggleFeatures = () => {
     const [showModal, setShowModal] = useState(false);
@@ -32,6 +33,9 @@ const ToggleFeatures = () => {
 
     const [showTable, setShowTable] = useState(false);
     const toggleTable = () => setShowTable(!showTable);
+
+    const [showDragAndDrop, setShowDragAndDrop] = useState(false);
+    const toggleDragAndDrop = () => setShowDragAndDrop(!showDragAndDrop);
 
     return (
         <>
@@ -69,6 +73,13 @@ const ToggleFeatures = () => {
                     <h2 className='feature-toggle-section-heading'>Table</h2>
                     <div className='feature-toggle-section-buttons'>
                         <button onClick={() => toggleTable()}>Show Example Table</button>
+                    </div>
+                </section>
+                <section className='feature-toggle-section'>
+                    <h2 className='feature-toggle-section-heading'>Drag and Drop</h2>
+                    <div className='feature-toggle-section-buttons'>
+                        <button onClick={() => toggleDragAndDrop()}>
+                            Show Drag and Drop Example</button>
                     </div>
                 </section>
             </main>
@@ -125,6 +136,7 @@ const ToggleFeatures = () => {
                     bodyKey4e: 'Body 4e',
                 }]}
                 footerData={['Footer 1', 'Footer 2', 'Footer 3', 'Footer 4']} />}
+            {showDragAndDrop && <DragAndDrop />}
         </>
     );
 };
