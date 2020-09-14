@@ -46,7 +46,9 @@ body {
 }
 
 #root {
-  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+  @include flex(column, flex-start, flex-start, nowrap);
 }
 
 // Custom scrollbar width for all Chrome, Safari and Edge. Firefox presently does not support this functionality.
