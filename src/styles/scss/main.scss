@@ -11,6 +11,7 @@
 @import '../../components/LabelledRadioButton/index.scss';
 @import '../../components/Card/index.scss';
 @import '../../components/SideDrawer/index.scss';
+@import '../../components/Table/index.scss';
 @import '../../features/NavBar/MenuItem/index.scss';
 @import '../../features/NavBar/index.scss';
 @import '../../features/BurgerMenu/index.scss';
@@ -24,8 +25,9 @@
 @import '../../features/DragAndDrop/index.scss';
 @import '../../features/DragAndDrop/components/DroppableContainer/index.scss';
 @import '../../features/DragAndDrop/components/DraggableElement/index.scss';
+@import '../../features/BottomNavigation/index.scss';
+@import '../../features/BottomNavigation/components/BottomNavigationItem/index.scss';
 @import '../../screens/Dashboard/index.scss';
-@import '../../components/Table/index.scss';
 
 @include fontFace('GalanoGrotesque', 'GalanoGrotesque-Regular');
 @include fontFace('GalanoGrotesque-Light', 'GalanoGrotesque-Light');

@@ -9,4 +9,12 @@
     padding: 15px;
     box-sizing: border-box;
     border-radius: 10px;
+
+    &:nth-child(even) {
+        margin-left: 5px;
+    }
+
+    &:nth-child(odd) {
+        margin-right: 5px;
+    }
 }

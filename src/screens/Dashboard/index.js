@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ToggleFeatures from '../../features/ToggleFeatures';
 import BackToTop from '../../features/BackToTop';
+import BottomNavigation from '../../features/BottomNavigation';
 
 class Dashboard extends Component {
     render() {
@@ -10,6 +11,7 @@ class Dashboard extends Component {
                     <ToggleFeatures />
                 </main>
                 <BackToTop />
+                <BottomNavigation />
             </div>
         );
     }

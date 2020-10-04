@@ -24,4 +24,5 @@ This is a library of resusable responsive components/features for ReactJS apps t
 * Back to top button
 * Table
     * Body X-Scrollable and Y-Scrollable.
-* Drag and Drop Feature
+* Drag and Drop Feature for Desktop
+* Bottom navigation for Mobile - hides when user scrolls to end to avoid the footer from being hidden.

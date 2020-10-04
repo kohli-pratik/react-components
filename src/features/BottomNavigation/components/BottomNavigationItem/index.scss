@@ -1,0 +1,18 @@
+.bottom-navigation-item {
+    @include flex(column, center, center, nowrap);
+    height: 100%;
+    width: 25%;
+    min-width: 50px;
+    font-family: GalanoGrotesque-Medium;
+    font-size: 1.2rem;
+
+    &-icon {
+        height: 25px;
+        margin-bottom: 10px;
+        pointer-events: none;
+    }
+
+    &-name {
+        pointer-events: none;
+    }
+}
