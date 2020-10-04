@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ToggleFeatures from '../../features/ToggleFeatures';
 import BackToTop from '../../features/BackToTop';
 import BottomNavigation from '../../features/BottomNavigation';
+import Constants from '../../utils/constants';
 
 class Dashboard extends Component {
     render() {
@@ -11,7 +12,7 @@ class Dashboard extends Component {
                     <ToggleFeatures />
                 </main>
                 <BackToTop />
-                <BottomNavigation />
+                <BottomNavigation navItems={Constants.bottomNavItems} />
             </div>
         );
     }

@@ -1,3 +1,7 @@
+import profileIcon from '../styles/images/profile-icon.png';
+import settingsIcon from '../styles/images/settings-icon.png';
+import notificationIcon from '../styles/images/notification-icon.png';
+
 const Constants = {
     actions: {},
     testData: {
@@ -91,6 +95,16 @@ const Constants = {
             subText2: 'Copyright © 2020',
         },
     },
+    bottomNavItems: [{
+        icon: profileIcon,
+        name: 'Profile',
+    }, {
+        icon: notificationIcon,
+        name: 'Notifications',
+    }, {
+        icon: settingsIcon,
+        name: 'Settings',
+    }],
 };
 
 export default Constants;
