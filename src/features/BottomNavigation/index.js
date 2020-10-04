@@ -34,7 +34,7 @@ class BottomNavigation extends Component {
     generateBottomNavItems = (items) => {
         const itemsHTML = [];
         items.forEach((item) => {
-            itemsHTML.push(<BottomNavigationItem id={`${item.name}-bottom-nav-item`}
+            itemsHTML.push(<BottomNavigationItem id={`${item.name.replace(/\s/g, '').toLowerCase()}-bottom-nav-item`}
                 icon={item.icon}
                 name={item.name}
                 handleClick={this.handleBottomNavItemClick} />);
