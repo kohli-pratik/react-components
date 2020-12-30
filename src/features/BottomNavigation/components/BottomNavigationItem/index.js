@@ -15,7 +15,7 @@ const BottomNavigationItem = ({
 
 BottomNavigationItem.propTypes = {
     id: PropTypes.string,
-    icon: PropTypes.object,
+    icon: PropTypes.string,
     name: PropTypes.string,
     handleClick: PropTypes.func,
 };

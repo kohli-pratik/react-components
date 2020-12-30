@@ -33,8 +33,11 @@ const Accordion = ({
     const generateSections = () => {
         const sections = [];
         data.forEach((sectionData, idx) => {
-            sections.push(<AccordionSection key={idx} sectionNumber={idx} title={sectionData.title}
-                link={sectionData.link} content={((typeof sectionData.content === 'string')
+            sections.push(<AccordionSection key={idx}
+                sectionNumber={idx}
+                title={sectionData.title}
+                link={sectionData.link}
+                content={((typeof sectionData.content === 'string')
                     ? generateContentHTML(sectionData.content) : sectionData.content)}
                 contentRef={contentRefs.current[idx]}
                 toggleAccordion={sectionData.content && ((event) => toggleAccordion(event))}
