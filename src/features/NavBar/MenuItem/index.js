@@ -48,7 +48,7 @@ const MenuItem = ({
     {!hasOptions && !hasCategories && <li className='item' id={id}>
         <a className='item-link' href={link}>{title}</a>
     </li>}
-    {(hasOptions || hasCategories) && <li className='item .dropdown' id={id}
+    {(hasOptions || hasCategories) && <li className='item dropdown' id={id}
         onMouseEnter={() => handleMouseEnter(id)}
         onMouseLeave={() => handleMouseLeave(id)}>
         <p className={dropdownOpen ? 'item-title active' : 'item-title'}>{title}</p>

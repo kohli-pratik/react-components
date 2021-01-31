@@ -12,13 +12,14 @@ const NavBar = ({ menuData, handleBurgerMenuBtnClick }) => {
 
     const handleDropdownMouseEnter = (elementId) => {
         const itemSelected = elementId.split('-')[1];
-        const currentClassName = dropdownRef.current[itemSelected].current.className;
+        const currentDropdownRef = dropdownRef.current[itemSelected].current;
+        const currentClassName = currentDropdownRef.className;
         if (currentClassName.includes(' hidden')) {
-            dropdownRef.current[itemSelected].current.className = currentClassName.replace(' hidden', '');
+            currentDropdownRef.className = currentClassName.replace(' hidden', '');
             setDropdownData({
                 [itemSelected]: {
                     isOpen: true,
-                    height: `${dropdownRef.current[itemSelected].current.scrollHeight}px`,
+                    height: `${currentDropdownRef.scrollHeight}px`,
                 },
             });
             setShowOverlay(true);
@@ -27,9 +28,10 @@ const NavBar = ({ menuData, handleBurgerMenuBtnClick }) => {
 
     const handleDropdownMouseLeave = (elementId) => {
         const itemSelected = elementId.split('-')[1];
-        const currentClassName = dropdownRef.current[itemSelected].current.className;
+        const currentDropdownRef = dropdownRef.current[itemSelected].current;
+        const currentClassName = currentDropdownRef.className;
         if (!currentClassName.includes(' hidden')) {
-            dropdownRef.current[itemSelected].current.className = currentClassName.concat(' hidden', '');
+            currentDropdownRef.className = currentClassName.concat(' hidden');
             setDropdownData({
                 [itemSelected]: {
                     isOpen: false,
