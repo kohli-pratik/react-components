@@ -1,11 +1,16 @@
 .draggable-element {
-    background-color: #F3F3F3;
+    background-color: #f3f3f3;
     width: 100%;
     min-height: 60px;
     height: 60px;
     padding: 10px;
     box-sizing: border-box;
     font-size: 1.4rem;
-    margin-bottom: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
     cursor: grab;
+
+    &.over {
+        border: 3px dashed #666;
+    }
 }

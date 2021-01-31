@@ -4,7 +4,8 @@ import DraggableElement from './components/DraggableElement';
 
 const DragAndDrop = () => (<div className='drag-n-drop-container'>
     <DroppableContainer id='droppable-container-1'>
-        <DraggableElement id='draggable-element-1'>
+        <DraggableElement id='draggable-element-1'
+            invincibleEffect={true}>
             <p>Draggable Element 1</p>
         </DraggableElement>
         <DraggableElement id='draggable-element-2'>

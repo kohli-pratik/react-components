@@ -25,4 +25,5 @@ This is a library of resusable responsive components/features for ReactJS apps t
 * Table
     * Body X-Scrollable and Y-Scrollable.
 * Drag and Drop Feature for Desktop
+    * Draggable elements have 2 effect options for when the user starts dragging the element - invincible in parent container or opacity reduced but element still visible.
 * Bottom navigation for Mobile - hides when user scrolls to end to avoid the footer from being hidden.
