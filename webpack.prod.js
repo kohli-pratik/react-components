@@ -1,7 +1,8 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+// eslint-disable-next-line no-unused-vars
 const CompressionPlugin = require('compression-webpack-plugin');
 const common = require('./webpack.common.js');
 

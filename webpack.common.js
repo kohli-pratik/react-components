@@ -21,7 +21,7 @@ module.exports = {
             },
             {
                 test: /\.(ttf|eot|woff|woff2|otf)(\?[a-z0-9=.]+)?$/,
-                loader: 'url-loader?limit=100000',
+                use: { loader: 'url-loader?limit=100000' },
             },
         ],
     },
@@ -34,7 +34,7 @@ module.exports = {
     ],
     output: {
         path: path.resolve(__dirname, 'build'),
-        // publicPath: path.resolve(__dirname, 'build'),
+        publicPath: path.resolve(__dirname, 'public'),
         filename: '[name].bundle.js',
     },
 };
