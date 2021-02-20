@@ -6,8 +6,16 @@
   "scripts": {
     "start": "HOST=$HOST PORT=$PORT webpack serve --open --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "jest --watchAll"
+    "test": "jest --watchAll",
+    "test-watchAll": "jest --watchAll --no-cache",
+    "test-silent": "jest --watchAll --silent",
+    "test-coverage": "jest --watchAll=false --silent --coverage",
+    "lint": "eslint --fix src/"
   },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
   "author": "Pratik H Kohli",
   "license": "ISC",
   "homepage": ".",
@@ -35,6 +43,41 @@
       "ie 11"
     ]
   },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "<rootDir>/src/setupTests.js"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|svg|otf|ttf|woff)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|scss)$": "<rootDir>/__mocks__/styleMock.js"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.js",
+      "!/index.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": -10
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "html"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/src/actions/",
+      "<rootDir>/src/reducers/",
+      "<rootDir>/src/store/",
+      "<rootDir>/src/config/",
+      "<rootDir>/src/utils/",
+      "<rootDir>/src/index.js",
+      "<rootDir>/src/context/"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
@@ -60,6 +103,7 @@
     "mini-css-extract-plugin": "^1.3.5",
     "node-sass": "^5.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.4",
+    "pre-commit": "^1.2.2",
     "sass-loader": "^10.1.1",
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.1.1",
@@ -70,7 +114,6 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "auth0-js": "^9.14.3",
     "axios": "^0.21.1",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",

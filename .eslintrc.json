@@ -12,6 +12,11 @@
         "browser": true,
         "jest": true
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "rules": {
         "indent": [
             "error",
@@ -39,9 +44,7 @@
         ],
         "no-console": 1,
         "no-alert": "off",
-        "no-underscore-dangle": "off",
-        "no-param-reassign": "off",
-        "global-require": "off",
+        "global-require": "error",
         "no-plusplus": [
             2,
             {
@@ -73,6 +76,25 @@
             {
                 "devDependencies": true
             }
+        ],
+        "brace-style": [
+            "error",
+            "1tbs",
+            {
+                "allowSingleLine": true
+            }
+        ],
+        "no-multiple-empty-lines": [
+            "error",
+            {
+                "max": 2,
+                "maxBOF": 0,
+                "maxEOF": 0
+            }
+        ],
+        "padded-blocks": [
+            "error",
+            "never"
         ]
     }
 }
