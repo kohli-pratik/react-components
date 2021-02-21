@@ -2,13 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const LabelledSelect = ({
-    id = '',
-    options = [],
-    label = false,
-    required = false,
-    breakColumn = false,
+    id,
+    options,
+    label,
+    required,
+    breakColumn,
     onChange,
-    value = '',
+    value,
 }) => (<>
     {label && <label className='form-label' id={`${id}-select-label`} htmlFor={`${id}-select`}>{label}</label>}
     {(required)
@@ -18,13 +18,13 @@ const LabelledSelect = ({
 </>);
 
 LabelledSelect.propTypes = {
-    id: PropTypes.string,
-    options: PropTypes.array,
-    label: PropTypes.string,
-    required: PropTypes.bool,
+    id: PropTypes.string.isRequired,
+    options: PropTypes.array.isRequired,
+    label: PropTypes.string.isRequired,
+    required: PropTypes.bool.isRequired,
     breakColumn: PropTypes.bool,
-    onChange: PropTypes.func,
-    value: PropTypes.string,
+    onChange: PropTypes.func.isRequired,
+    value: PropTypes.string.isRequired,
 };
 
 export default LabelledSelect;

@@ -32,6 +32,7 @@ AccordionSection.propTypes = {
     content: Proptypes.oneOfType(
         Proptypes.string,
         Proptypes.array,
+        Proptypes.object,
     ),
     toggleAccordion: Proptypes.func,
     contentRef: Proptypes.any,

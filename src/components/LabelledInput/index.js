@@ -7,13 +7,13 @@ export const LabelledInputTypeEmail = 'email';
 export const LabelledInputTypeSubmit = 'submit';
 
 const LabelledInput = ({
-    id = '',
-    type = LabelledInputTypeText,
-    label = false,
-    required = false,
-    breakColumn = false,
+    id,
+    type,
+    label,
+    required,
+    breakColumn,
     onChange,
-    value = '',
+    value,
 }) => (<>
     {label && <label className='form-label' id={`${id}-input-label`} htmlFor={`${id}-input`}>{label}</label>}
     {(required)
@@ -23,16 +23,16 @@ const LabelledInput = ({
 </>);
 
 LabelledInput.propTypes = {
-    id: PropTypes.string,
-    type: PropTypes.string,
-    label: PropTypes.string,
-    required: PropTypes.bool,
+    id: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    required: PropTypes.bool.isRequired,
     breakColumn: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func.isRequired,
     value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.number,
-    ]),
+    ]).isRequired,
 };
 
 export default LabelledInput;

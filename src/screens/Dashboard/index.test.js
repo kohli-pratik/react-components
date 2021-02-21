@@ -8,12 +8,10 @@ import ToggleFeatures from '../../features/ToggleFeatures';
 
 Enzyme.configure({ adapter: new Adapter() });
 let wrapper;
-// let wrapperInstance;
 
 describe('Testing dashboard screen component', () => {
     beforeEach(() => {
         wrapper = shallow(<Dashboard />);
-        // wrapperInstance = wrapper.instance();
     });
 
     test('Should contain BottomNavigation, BackToTop and ToggleFeatures on load', () => {

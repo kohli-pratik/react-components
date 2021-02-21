@@ -20,6 +20,16 @@ const Constants = {
             label: 'Other',
         }],
         countries: [null, 'United Kingdom', 'USA'],
+        maritialStatus: ['Single', 'Married', 'Divorced'],
+        contactMethods: [{
+            name: 'contactMethod',
+            value: 'phone',
+            label: 'Phone',
+        }, {
+            name: 'contactMethod',
+            value: 'email',
+            label: 'Email',
+        }],
         accordion: [{
             title: 'Test accordion 1',
             content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Risus nullam eget felis eget nunc. Tortor id aliquet lectus proin nibh nisl. Dolor magna eget est lorem ipsum dolor sit amet consectetur. Parturient montes nascetur ridiculus mus mauris vitae ultricies leo integer.',
