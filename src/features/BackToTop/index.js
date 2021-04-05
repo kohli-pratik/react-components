@@ -1,47 +1,36 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import chevronUp from '../../styles/images/chevron-up.svg';
 
-class BackToTop extends Component {
-    state = {
-        className: 'backToTopBtn hidden',
-    };
-
-    componentDidMount = () => {
-        window.addEventListener('scroll', this.handleScroll, { passive: true });
-    }
-
-    componentWillUnmount = () => {
-        window.removeEventListener('scroll', () => { });
-    }
-
-    handleScroll = () => {
-        let { className } = this.state;
+const BackToTop = () => {
+    const [className, setClassName] = useState('backToTopBtn hidden');
+    const handleScroll = () => {
         if (window.pageYOffset > 200 && className.includes('hidden')) {
-            this.setState({ className: className.replace(' hidden', '') });
+            setClassName('backToTopBtn');
         }
 
         if (window.pageYOffset <= 200 && !className.includes('hidden')) {
-            this.setState({ className: className += ' hidden' });
+            setClassName('backToTopBtn hidden');
         }
-    }
+    };
 
-    goToTop = () => {
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return (() => {
+            window.removeEventListener('scroll', () => { });
+        });
+    });
+
+    const goToTop = () => {
         window.scrollTo({
             top: 0,
             behavior: 'smooth',
         });
-    }
+    };
 
-    render() {
-        const { className } = this.state;
-        return (
-            <>
-                <button className={className} onClick={() => this.goToTop()}>
-                    <img src={chevronUp} className='backToTopBtn-icon' />
-                </button>
-            </>
-        );
-    }
-}
+    return <button className={className} onClick={() => goToTop()}>
+        <img src={chevronUp} className='backToTopBtn-icon' />
+    </button>;
+};
 
 export default BackToTop;
